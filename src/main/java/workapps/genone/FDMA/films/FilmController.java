@@ -28,4 +28,14 @@ public class FilmController {
         filmService.createSingleFilm(film);
     }
 
+    @RequestMapping(method= RequestMethod.PUT, value = "/films/{filmId}")
+    public void updateSingleFilm(@PathVariable Integer filmId, @RequestBody Film film) {
+        filmService.updateSingleFilm(filmId, film);
+    }
+
+    @RequestMapping(method= RequestMethod.DELETE, value = "/films/{filmId}")
+    public void deleteSingleFilm(@PathVariable Integer filmId) {
+        filmService.deleteSingleFilm(filmId);
+    }
+
 }

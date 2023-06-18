@@ -44,11 +44,11 @@ public class Film {
         this.filmCode = filmCode;
     }
 
-    public String getReleaseData() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseData(String releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 

@@ -10,7 +10,9 @@ import java.util.List;
 public class FilmService {
 
     private List<Film> films = new ArrayList<>(Arrays.asList(
-            new Film(1, "Goodfellas", "GOODFELLAS1990", "1990")
+            new Film(1, "Goodfellas", "GOODFELLAS1990", "1990"),
+            new Film(2, "Fight Club", "FIGHT_CLUB1999", "1999"),
+            new Film(3, "The Big Lebowski", "BIGLEBOWSK1998", "1998")
         ));
 
     public List<Film> getAllFilms() {
@@ -24,4 +26,18 @@ public class FilmService {
     public void createSingleFilm(Film film) {
         films.add(film);
     }
+    public void updateSingleFilm(Integer filmId, Film film) {
+        for (int i = 0; i < films.size(); i++) {
+            Film f = films.get(i);
+            if (f.getFilmId().equals(filmId)) {
+                films.set(i, film);
+                return;
+            }
+        }
+    }
+
+    public void deleteSingleFilm(Integer filmId) {
+        films.removeIf(film -> film.getFilmId().equals(filmId));
+    }
+
 }
